@@ -1,3 +1,14 @@
 <% provide(:title, 'Sign up') %>
 <h1>Sign up</h1>
-<p>This will be a signup page for new users.</p>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@user, url: signup_path) do |f| %>
+      <%= render "shared/errors"  %>
+      <%= f.text_field :name, placeholder: "name", class: "form-control" %>
+      <%= f.email_field :email, placeholder: "email", class: "form-control" %>
+      <%= f.password_field :password, placeholder: "password", class: "form-control" %>
+      <%= f.password_field :password_confirmation, placeholder: "password confirmation", class: "form-control" %>
+      <%= f.submit "Create Account", class: "btn btn-primary width100" %>
+    <% end %>
+  </div>
+</div>
