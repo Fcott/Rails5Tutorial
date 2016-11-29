@@ -29,7 +29,7 @@ class PasswordResetsTest < ActionDispatch::IntegrationTest
     assert_redirected_to root_url
     user.toggle!(:activated)
     #invalid reset_token
-    get edit_password_reset_path('', email: user.email)
+    get edit_password_reset_path('wrong_token', email: user.email)
     assert_redirected_to root_url
     #valid user
     get edit_password_reset_path(user.reset_token, email: user.email)
