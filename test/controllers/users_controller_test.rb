@@ -35,7 +35,6 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   test "should redirect edit when logged in as another user" do
     log_in_as(@another_user)
     get edit_user_path(@user)
-    assert_not flash.empty?
     assert_redirected_to root_url
   end
 
@@ -45,7 +44,6 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
                   name: @user.name,
                   email: @user.email
       }}
-    assert_not flash.empty?
     assert_redirected_to root_url
   end
 
@@ -75,5 +73,5 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     end
     assert_redirected_to root_url
   end
-  
+
 end

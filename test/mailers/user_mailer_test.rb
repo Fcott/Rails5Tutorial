@@ -1,5 +1,6 @@
 require 'test_helper'
 
+# http://localhost:3000/rails/mailers/user_mailer/account_activation
 class UserMailerTest < ActionMailer::TestCase
   test "account_activation" do
     user = users(:michael)
@@ -14,6 +15,7 @@ class UserMailerTest < ActionMailer::TestCase
 
   end
 
+# http://localhost:3000/rails/mailers/user_mailer/password_reset
   test "password_reset" do
     user = users(:michael)
     user.reset_token = User.new_token
