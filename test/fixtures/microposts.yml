@@ -19,7 +19,7 @@ most_recent:
   user: michael
 
 
-<% 10.times do |n| %>
+<% 10.times do |n| %> 
 micropost_<%= n %>:
   content:  <%= Faker::Lorem.sentences(2).join(" ") %>
   created_at: <%= 30.days.ago %>
